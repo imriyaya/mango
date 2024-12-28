@@ -1,15 +1,24 @@
 <script setup lang="ts">
-import { RouterView } from 'vue-router'
+import {RouterView, useRoute, useRouter} from 'vue-router'
 import CommonHeader from "@/components/CommonHeader.vue";
+import {useViewingPage} from "@/stores/viewingPage.ts";
 </script>
 
 <template>
-  <CommonHeader />
-  <RouterView />
+  <div class="px-3">
+    <CommonHeader v-if="!useViewingPage().is" />
+    <div class="mx-auto max-w-[1000px]">
+      <RouterView />
+    </div>
+  </div>
 </template>
 
 <style>
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply bg-neutral-200
+}
 </style>

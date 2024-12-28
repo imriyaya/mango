@@ -23,7 +23,7 @@ func List(server *_type.Server) {
 			return
 		}
 
-		opts := options.Find().SetLimit(30).SetSkip(int64(skip))
+		opts := options.Find().SetLimit(30).SetSkip(int64(skip)).SetProjection(bson.D{{"chapters", 0}})
 		cursor, err := server.MangaCollection.Find(context.TODO(), bson.D{}, opts)
 		if err != nil {
 			c.JSON(500, err)
