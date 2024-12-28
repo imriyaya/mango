@@ -29,7 +29,6 @@ $fetch<Manga>(API_HOST + `/manga/${mangaId}`)
         <h1 class="text-xl"><span class="text-sm">タイトル:</span> {{ manga?.title }}</h1>
         <h1 class="text-xl"><span class="text-sm">チャプター数:</span> {{ manga?.chapters.length }}</h1>
         <ChapterList :manga="manga" />
-        <button class="p-1 bg-blue-500 text-white font-bold rounded-xl">この漫画を読む</button>
       </div>
     </div>
   </div>

@@ -6,7 +6,7 @@ import {useViewingPage} from "@/stores/viewingPage.ts";
 
 <template>
   <div class="px-3">
-    <CommonHeader v-if="!useViewingPage().is" />
+    <CommonHeader />
     <div class="mx-auto max-w-[1000px]">
       <RouterView />
     </div>
